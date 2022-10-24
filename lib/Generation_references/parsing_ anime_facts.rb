@@ -40,7 +40,7 @@ def Information_Of_Anime_Facts(anime_names, fact_id)
   anime_names.each do |name|
     begin
       url = Nokogiri::HTML5(URI.open('https://anime-facts-rest-api.herokuapp.com/api/v1/' +
-                                      + name[:name] + '/' + fact_id)).to_s
+                                      + name[:name] + '/' + fact_id.to_s)).to_s
     rescue
       next
     end
