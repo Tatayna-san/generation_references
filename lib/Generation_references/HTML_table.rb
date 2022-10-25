@@ -1,9 +1,9 @@
 require_relative 'parsing_anime_facts'
 
 
-def create_table_anime_facts(anime, fact_id)
+def create_table_anime_facts(anime_name, fact_id)
   file_html = File.new("lib/Generation_references/table.html", "w+")
-  anime = Get_Anime()
+  anime_name = Get_Anime()
   file_html.puts "<style type='text/css'>
                   .table {
 	                    width: 100%;
@@ -43,14 +43,14 @@ def create_table_anime_facts(anime, fact_id)
                   </style>
                   <table class='table'>
                         <thead>
-                            #{anime[:name]}
+                            #{anime_name[:name]}
                             <tr>
                                 <th>Anime</th>
                             </tr>
                         </thead>
                   <tbody>"
 
-  anime_facts_information = Information_Of_Anime_Facts(anime, fact_id)
+  anime_facts_information = Information_Of_Anime_Facts(anime_name, fact_id)
   anime_facts_information.each do |elem|
     file_html.puts "<tr>"
     file_html.puts "<th>"
@@ -73,4 +73,3 @@ def create_table_anime_facts(anime, fact_id)
                   </table>"
   file_html.close
 end
-
