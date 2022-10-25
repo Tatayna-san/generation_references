@@ -2,7 +2,7 @@ require_relative 'parsing_anime_facts'
 
 
 def create_table_anime_facts(anime_name, fact_id)
-  file_html = File.new("lib/Generation_references/table.html", "w+")
+  file_html = File.new("lib/Generation_references/HTML_table.html", "w+")
   anime_name = Get_Anime()
   file_html.puts "<style type='text/css'>
                   .table {

@@ -1,5 +1,5 @@
 def create_main_table()
-  file_html = File.new('lib/Generation_references/table.html', 'w+')
+  file_html = File.new('lib/Generation_references/HTML_table.html', 'w+')
   file_html.puts "<!DOCTYPE html>
   <html>
   <head>
@@ -21,7 +21,7 @@ def create_main_table()
   <div>
   <p border='0'>
     <div2>
-    <a href='Anime_Facts/table.html'><img src='../../images/logo.png' width=45% border='0' alt=''></a>
+    <a href='Anime_Facts/HTML_table.html'><img src='../../images/logo.png' width=45% border='0' alt=''></a>
     </div2>
   </p>
   </div>
