@@ -40,15 +40,15 @@ def Information_Of_Anime_Facts(anime_names, fact_id)
   anime_names.each do |name|
     begin
       url = Nokogiri::HTML5(URI.open('https://anime-facts-rest-api.herokuapp.com/api/v1/' +
-                                      + name[:name] + '/' + fact_id.to_s)).to_s
+                                       + name[:name] + '/' + fact_id.to_s)).to_s
     rescue
       next
     end
     anime_name = name[:name]
-    fact = url[/"fact":"(?<fact>.*)"/]
-    return res.push(  { name: anime_name,fact: fact[:fact]})
+    fact = url[/"fact":"(?<fact>.*)"/, 1]
+    res.push({name: anime_name, fact: fact})
   end
-  res
+  return res
 end
 
 Anime_Facts = Information_Of_Anime_Facts(Get_Anime(),1)
