@@ -50,7 +50,7 @@ def create_table_anime_facts(anime, fact_id)
                         </thead>
                   <tbody>"
 
-  anime_facts_information = Information_Of_Anime_Facts(Get_Anime(), fact_id)
+  anime_facts_information = Information_Of_Anime_Facts(anime, fact_id)
   anime_facts_information.each do |elem|
     file_html.puts "<tr>"
     file_html.puts "<th>"
