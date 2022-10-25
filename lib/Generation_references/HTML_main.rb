@@ -5,7 +5,7 @@ def create_main_table()
   <head>
     <title>Заголовок документа</title>
     <style>
-      div
+      div1
       {
         width: 100%; /* Размеры */
         outline: '0';
@@ -18,13 +18,13 @@ def create_main_table()
     </style>
   </head>
   <body>
-  <div>
+  <div1>
   <p border='0'>
     <div2>
-    <a href='Anime_Facts/HTML_table.html'><img src='../../images/logo.png' width=45% border='0' alt=''></a>
+    <a href='HTML_table.html'><img src='../../images/logo.png' width=45% border='0' alt=''></a>
     </div2>
   </p>
-  </div>
+  </div1>
 </body>
 </html>"
   file_html.close

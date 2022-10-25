@@ -43,7 +43,7 @@ def create_table_anime_facts(anime_name, fact_id)
                   </style>
                   <table class='table'>
                         <thead>
-                            #{anime_name[:name]}
+                            #{anime_name[:anime_name]}
                             <tr>
                                 <th>Anime</th>
                             </tr>
@@ -54,10 +54,10 @@ def create_table_anime_facts(anime_name, fact_id)
   anime_facts_information.each do |elem|
     file_html.puts "<tr>"
     file_html.puts "<th>"
-    if elem[:name].nil?
+    if elem[:anime_name].nil?
       file_html.puts "<span style = 'font-size:20pt'> - </span>"
     else
-      file_html.puts elem[:name]
+      file_html.puts elem[:anime_name]
     end
     file_html.puts "</th>"
     file_html.puts "<th>"
