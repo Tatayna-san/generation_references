@@ -1,6 +1,5 @@
-require_relative 'html_anime_facts_table'
+require_relative 'HTML_table'
 require 'erb'
-
 
 module Generation_references
   module Html_main
