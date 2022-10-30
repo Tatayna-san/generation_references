@@ -12,7 +12,7 @@ def create_table_anime_facts(path)
   renderer = ERB.new(erb_str)
   result = renderer.result(binding)
 
-  File.open(path + "/table_game.html", 'w') do |f|
+  File.open(path + "/table_anime_facts.html", 'w') do |f|
     f.write(result)
   end
 end
