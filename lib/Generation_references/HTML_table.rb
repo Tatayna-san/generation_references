@@ -7,7 +7,6 @@ def create_table_anime_facts(path)
   anime_name = Get_Anime()
   anime_facts_information = Information_Of_Anime_Facts(anime_name)
 
-  @anime_name = anime_name
   @anime_facts_information = anime_facts_information
   renderer = ERB.new(erb_str)
   result = renderer.result(binding)
