@@ -66,6 +66,6 @@ def Information_Of_Anime_Facts(anime_names)
 end
 
 
-Anime_Facts = Information_Of_Anime_Facts(Get_Anime())
-puts Anime_Facts
-puts Anime_Facts.size
+#Anime_Facts = Information_Of_Anime_Facts(Get_Anime())
+#puts Anime_Facts
+#puts Anime_Facts.size
