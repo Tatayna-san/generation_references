@@ -17,47 +17,55 @@ def Get_Anime()
   end
   res
 end
+#puts Get_Anime()
 
-def Information_Of_Anime_Facts(anime_names, fact_id)
+=begin
+def Get_Anime_Facts(anime_names)
   res = []
   anime_names.each do |name|
-    begin
-      url = Nokogiri::HTML5(URI.open('https://anime-facts-rest-api.herokuapp.com/api/v1/' +
-                                       + name[:name] + '/' + fact_id.to_s)).to_s
-    rescue
-      next
+  begin
+    url = Nokogiri::HTML5(URI.open('https://anime-facts-rest-api.herokuapp.com/api/v1/' + name[:name])).to_s
+  rescue
+    next
+  end
+  anime_name = name[:name]
+  anime_fact = url.split(',')
+  anime_fact.each do |a|
+    fact = a.match(/"fact":"(?<fact>.*)"/)
+      if !fact.nil?
+        res.push( {name: anime_name, fact: fact[:fact]})
+      end
     end
-    anime_name = name[:name]
-    fact = url[/"fact":"(?<fact>.*)"/, 1]
-    res.push({name: anime_name, fact: fact})
   end
   return res
 end
 
-#Anime_Facts = Information_Of_Anime_Facts(Get_Anime(), 1)
-#puts Anime_Facts
-#puts Anime_Facts.size
+puts Get_Anime_Facts(Get_Anime())
+=end
 
-=begin
-def Get_Facts()
+def Information_Of_Anime_Facts(anime_names)
   res = []
+  facts = []
   anime_names.each do |name|
-      begin
-        url = Nokogiri::HTML5(URI.open('https://anime-facts-rest-api.herokuapp.com/api/v1/' + name[:name])).to_s
-      rescue
-        return res
+    begin
+      url = Nokogiri::HTML5(URI.open('https://anime-facts-rest-api.herokuapp.com/api/v1/' + name[:name])).to_s
+    rescue
+      next
+    end
+    anime_name = name[:name]
+    anime_fact = url.split(',')
+    anime_fact.each do |a|
+      fact = a.match(/"fact":"(?<fact>.*)"/)
+      if !fact.nil?
+        res.push( {name: anime_name, fact: fact[:fact]})
       end
-  end
-  anime_name = name[:name]
-  arr = url.split(',')
-  arr.each do |a|
-    fact_id = a.match(/"fact_id":(?<id>.*)/)
-    if !fact_id.nil?
-      res.push(fact_id: fact_id)
+
     end
   end
-  res
+  return res
 end
 
-puts Get_Facts()
-=end
+
+Anime_Facts = Information_Of_Anime_Facts(Get_Anime())
+puts Anime_Facts
+puts Anime_Facts.size
