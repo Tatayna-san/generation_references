@@ -4,46 +4,31 @@
 </head>
 <style type='text/css'>
     .table {
+        font-family:Sans-Serif;
+        font-size: 16px;
         width: 100%;
+        text-align: center;
         border: none;
-        margin-bottom: 20px;
+        background: #f1f0f0;
+        margin: 10px;
     }
 
     .table thead th {
-        font-weight: bold;
-        text-align: left;
-        border: none;
-        padding: 10px 15px;
-        background: #d8d8d8;
-        font-size: 14px;
+        color: #035749;
+        border-bottom: 2px solid #207968;
+        border-right: none;
+        padding: 7px 17px;
     }
 
-    .table thead tr th:first-child {
-        border-radius: 8px 0 0 8px;
+    .table tbody th {
+        color: #207968;
+        border-bottom: 2px solid #d7ded9;
+        border-right: 2px solid #d7ded9;
+        padding: 7px 17px;
     }
 
-    .table thead tr th:last-child {
-        border-radius: 0 8px 8px 0;
-    }
-
-    .table tbody td {
-        text-align: left;
-        border: none;
-        padding: 10px 15px;
-        font-size: 14px;
-        vertical-align: top;
-    }
-
-    .table tbody tr:nth-child(even) {
-        background: #f3f3f3;
-    }
-
-    .table tbody tr td:first-child {
-        border-radius: 8px 0 0 8px;
-    }
-
-    .table tbody tr td:last-child {
-        border-radius: 0 8px 8px 0;
+    .table tbody tr td:hover td {
+        text-decoration: underline;
     }
 </style>
 
@@ -56,21 +41,13 @@
   </tr>
   </thead>
   <tbody>
-  <% @anime_facts_information.each do |a| %>
+  <% @anime_facts_information.each do |anime_facts| %>
     <tr>
       <th>
-        <% if a[:name].nil? %>
-          <span style = 'font-size:20pt'> - </span>
-        <% else %>
-          <%= a[:name] %>
-        <% end %>
+        <%= anime_facts.name%>
       </th>
       <th>
-        <% if a[:fact].nil? %>
-          <span style = 'font-size:20pt'> - </span>
-        <% else %>
-          <%= a[:fact] %>
-        <% end %>
+        <%= anime_facts.fact%>
       </th>
     </tr>
   <% end %>
