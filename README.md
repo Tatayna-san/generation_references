@@ -18,7 +18,8 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+usage examples:
+require "Generation_references"
 
 ## Development
 
