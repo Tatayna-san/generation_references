@@ -5,7 +5,7 @@ require 'json'
 
 class Games
   include Comparable
-  attr_reader :id, :title, :thumbnail, :short_description, :game_url, :genre, :platform, :publisher, :release_date, :profile_url
+  attr_reader :id, :title, :thumbnail, :short_description, :game_url, :genre, :platform, :publisher, :developer, :release_date, :profile_url
 
   #конструктор класса. из строки вытаскивает функцией help нужные данные для полей
   def initialize (arr_games)
@@ -18,8 +18,9 @@ class Games
     @genre = help(arr, 5)
     @platform = help(arr, 6)
     @publisher = help(arr, 7)
-    @release_date = help(arr, 8).to_i
-    @profile_url = help(arr, 9)
+    @developer = help(arr, 8)
+    @release_date = help(arr, 9).to_i
+    @profile_url = help(arr, 10)
   end
 
   def <=>(an_other)
@@ -31,7 +32,7 @@ class Games
   end
 end
 
-def get_arr_games()
+def get_games()
   uri = 'https://www.mmobomb.com/api1/games'
   doc = Nokogiri::HTML(URI.open(uri))
 
