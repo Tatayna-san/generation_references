@@ -11,4 +11,6 @@ gem "minitest", "~> 5.0"
 
 gem "rubocop", "~> 1.21"
 
-gem "nokogiri"
+gem "nokogiri", "~> 1.13.0"
+
+gem "erb", "~> 3.0.0"
