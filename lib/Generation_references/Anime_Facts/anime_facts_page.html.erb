@@ -65,6 +65,13 @@
           <%= a[:name] %>
         <% end %>
       </th>
+      <th>
+        <% if a[:fact].nil? %>
+          <span style = 'font-size:20pt'> - </span>
+        <% else %>
+          <%= a[:fact] %>
+        <% end %>
+      </th>
     </tr>
   <% end %>
   </tbody>
