@@ -2,9 +2,21 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Generation_references`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-This gem allows you to get information about various facts about anime. Information about the facts includes:
+This gem allows you to get information about various facts about anime and information about MMO games. 
+Information about the facts includes:
 - Anime name
 - Facts about anime
+Information about Games includes:
+- Title
+- Thumbnail
+- Short description
+- Game url
+- Genre
+- Platform
+- Publisher
+- Developer
+- Release
+- Profile
 
 ## Installation
 
@@ -20,6 +32,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 usage examples:
 require "Generation_references"
+Generation_references::Html_main::HTML_main_page.create_main("The path where to create files")
 
 ## Development
 
