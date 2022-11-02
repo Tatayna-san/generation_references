@@ -1,11 +1,12 @@
-require_relative 'HTML_table'
+require_relative 'Games/HTML_games_table'
 require 'erb'
 
 module Generation_references
-  module Html_main
-    class Html_main_page
+  module HTML_main
+    class HTML_main_page
       def self.create_main(path)
-        create_table_anime_facts(path)
+        #create_table_anime_facts(path)
+        create_table_games(path)
 
         erb_str = File.read(File.dirname(__FILE__) + '/main_page.html.erb')
 

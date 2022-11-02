@@ -1,1 +1,13 @@
-.idea
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+.idea/
+*.gem
+Gemfile.lock
+.rakeTasks
+*.html
