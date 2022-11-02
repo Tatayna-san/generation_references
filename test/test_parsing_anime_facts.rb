@@ -12,7 +12,7 @@ class Parsing_Anime_Facts < Minitest::Test
     assert_equal(anime_facts_information.size, 26)
   end
 
-  def test_fact_of_bleach
-    assert_equal(Information_Of_Anime_Facts('bleach')[:username], 1)
+  def test_fact_of_anime_name
+    #assert_equal(Get_Anime(), )
   end
 end
