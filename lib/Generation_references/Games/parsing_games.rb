@@ -5,7 +5,7 @@ require 'json'
 
 class Games
   include Comparable
-  attr_reader :id, :title, :thumbnail, :short_description, :game_url, :genre, :platform, :publisher, :developer, :release_date, :profile_url
+  attr_reader :id, :title, :thumbnail, :short_description, :game_url, :genre, :platform, :publisher, :developer,  :release_date, :profile_url
 
   #конструктор класса. из строки вытаскивает функцией help нужные данные для полей
   def initialize (arr_games)
@@ -19,7 +19,7 @@ class Games
     @platform = help(arr, 6)
     @publisher = help(arr, 7)
     @developer = help(arr, 8)
-    @release_date = help(arr, 9).to_i
+    @release_date = help(arr, 9)
     @profile_url = help(arr, 10)
   end
 

@@ -2,6 +2,6 @@
 
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 
-require "../lib/Generation_references"
+require_relative '../lib/Generation_references'
 require "minitest/autorun"
 
