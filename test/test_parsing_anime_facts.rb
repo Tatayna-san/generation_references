@@ -5,11 +5,11 @@ class Parsing_Anime_Facts < Minitest::Test
 
   def test_of_anime_name
     anime_facts_information = Anime_Facts.new('name:"bleach",fact:"Ichigo s English Voice Actor Was A Power Ranger')
-    assert_equal(Anime_Facts.name, "bleach")
+    assert_equal(anime_facts_information.name, "bleach")
   end
 
   def test_of_anime_fact
     anime_facts_information = Anime_Fact.new('name:"bleach",fact:"Ichigo s English Voice Actor Was A Power Ranger')
-    assert_equal(Anime_Fact.fact, "Ichigo s English Voice Actor Was A Power Ranger")
+    assert_equal(anime_facts_information.fact, "Ichigo s English Voice Actor Was A Power Ranger")
   end
 end
